@@ -1,0 +1,535 @@
+@font-face {
+  font-family: 'AmaticSC-Bold';
+  src: url('AmaticSC-Bold.woff') format('woff');
+  src: url('AmaticSC-Bold.ttf') format('truetype');
+  src: url('AmaticSC-Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: oblique;
+}
+@font-face {
+  font-family: 'OpenSans-Light';
+  src: url('OpenSans-Light.woff') format('woff');
+  src: url('OpenSans-Light.ttf') format('truetype');
+  src: url('OpenSans-Light.otf') format('opentype');
+  font-weight: lighter;
+  font-style: oblique;
+}
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+body, html, #mainContainer{
+  height:100%;
+  width:100%;
+}
+@media screen and (max-width: 1200px){
+  #mainContainer{
+    display: flex;
+    justify-content: center;
+  }
+  #homePage, #surveyPage, #infoPage{
+    min-height: 100%;
+    width: 100%;
+    display: flex;
+  }
+  #homePage{
+    overflow-y: visible;
+    background-color: #B4DDCB;
+  }
+  #surveyPage{
+    background-color: #F3ABCC;
+  }
+  #infoPage{
+   background-color: #96DAF4;
+  }
+  .nav{
+    display: flex;
+    justify-content: flex-start;
+    background-color: #000;
+    overflow: hidden;
+    position: fixed;
+    top:0;
+    width:100%;
+    box-shadow: 0px 5px .6em #eee;
+    z-index: 1;
+  }
+  .nav ul{
+    display: inline-flex;
+    overflow: hidden;
+  }
+  .nav a{
+    font-family:AmaticSC-Bold;
+    display: inline-flex;
+    align-items: flex-end;
+    color: #fff;
+    padding: 16px 2.5vw;
+    text-decoration: none;
+    font-size: 35px;
+  }
+  .nav a:hover{
+    display: inline-flex;
+    background-color: #eee;
+    color: black;
+  }
+  .nav a.active{
+    display: inline-flex;
+    flex-direction: row;
+    align-items: flex-end;
+    background-color: #fff;
+    color: black;
+  }
+  #contentContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    bottom: 9vw;
+    height: auto;
+    width: 85%;
+    top: 90px;
+    margin-top: 100px;
+    margin-bottom: 60px;
+    padding: 40px 60px;
+    background-color: white;
+  }
+  #header{
+    padding-bottom: 20px;
+  }
+  #disclaimer{
+    padding: 20px;
+    border: 3px dashed red;
+    text-align: justify;
+    margin-bottom: 4vw;
+  }
+  .grid-container{
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    /* grid-template-rows: repeat(1, auto); */
+    grid-gap: 4vw;
+  }
+  .grid-container > div {
+    text-align: center;
+    padding: 1vw 1vw;
+    font-size: 30px;
+  }
+  .item{
+    display: flex;
+    flex-direction: row;
+  }
+  #text{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border: 3px dashed black;
+    padding: 20px;
+    width: 100%;
+  }
+  #homePage #headingText{
+    text-align:center;
+  }
+  #infoPage #headingText{
+    text-align: left;
+  }
+  #descriptionText{
+    text-align: justify;
+    text-indent: 5vw;
+  }
+  #imageA{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    padding: 20px;
+    padding-right: 0;
+  }
+  #imageB{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    padding: 20px;
+    padding-left: 0;
+  }
+  .homeImgA{
+    height: 20vw;
+    width: 20vw;
+    border-radius: 20vw;
+  }
+  .homeImgA:hover{
+    filter: blur(1px);
+    transition: 1s;
+  }
+  .infoImgA{
+    height: 10vw;
+    width: 10vw;
+    border-radius: 10vw;
+  }
+  .infoImgA:hover{
+    filter: blur(1px);
+    transition: 1s;
+  }
+  #ribbon{
+    display: flex;
+    justify-content: flex-start;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+  #surveyIntro{
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 40px;
+  }
+  #surveyQuestions{
+    display: inline-flex;
+    flex-direction: column;
+    align-self: flex-start;
+    font-family: openSans-Light;
+    font-size: 2vw;
+  }
+  #submitSurvey{
+    display: inline-flex;
+    flex-direction: column;
+    align-self: flex-end;
+    font-family: openSans-Light;
+    font-size: 2vw;
+  }
+
+  .logo{
+    position: relative;
+    width: 75px;
+    height: 77px;
+  }
+  h1{
+    font-family: AmaticSC-Bold;
+    font-size: 7vw;
+  }
+  h3{
+    font-family: AmaticSC-Bold;
+    font-size: 3vw;
+  }
+  h4{
+    font-family: AmaticSC-Bold;
+    font-size: 5vw;
+  }
+  h5{
+    font-family: AmaticSC-Bold;
+    font-size: 4vw;
+  }
+  h6{
+    font-family: openSans-Light;
+    font-size: 2vw;
+  }
+  #disclaimer h3{
+    text-align: center;
+  }
+  #footer{
+    width: 100%;
+    text-align: center;
+    margin: 2vw;
+    margin-top: 4vw;
+    border: 3px dashed black;
+  }
+  #homePage #footer{
+    background-color: #B4DDCB;
+  }
+  #surveyPage #footer{
+    background-color: #F3ABCC;
+  }
+  #infoPage #footer{
+   background-color: #96DAF4;
+  }
+  #submitButton{
+    border: 2px dashed black;
+    padding: 5px 5px;
+    font-family: AmaticSC-Bold;
+    font-size: 2.5vw;
+    cursor: pointer;
+  }
+  #planResults{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    margin-left: 8vw;
+    margin-right: 8vw;
+  }
+  #image{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+  }
+  #issues{
+    display: flex;
+    flex-direction: column;
+  }
+  #issue1, #issue2, #issue3{
+    display: inline-flex;
+    flex-direction: column;
+    text-align: left;
+  }
+  input{
+    width: 3vw;
+    height: 2vw;
+  }
+  p{
+    font-family: openSans-Light;
+    font-size: 2vw;
+  }
+}
+@media screen and (min-width: 1200px){
+  #mainContainer{
+    display: flex;
+    justify-content: center;
+  }
+  #homePage, #surveyPage, #infoPage{
+    min-height: 100%;
+    width: 100%;
+    display: flex;
+  }
+  #homePage{
+    overflow-y: visible;
+    background-color: #B4DDCB;
+  }
+  #surveyPage{
+    background-color: #F3ABCC;
+  }
+  #infoPage{
+   background-color: #96DAF4;
+  }
+  .nav{
+    display: flex;
+    justify-content: flex-start;
+    background-color: #000;
+    overflow: hidden;
+    position: fixed;
+    top:0;
+    width:100%;
+    box-shadow: 0px 5px .6em #eee;
+    z-index: 1;
+  }
+  .nav ul{
+    display: inline-flex;
+    overflow: hidden;
+  }
+  .nav a{
+    font-family:AmaticSC-Bold;
+    display: inline-flex;
+    align-items: flex-end;
+    color: #fff;
+    padding: 16px 2.5vw;
+    text-decoration: none;
+    font-size: 35px;
+  }
+  .nav a:hover{
+    display: inline-flex;
+    background-color: #eee;
+    color: black;
+  }
+  .nav a.active{
+    display: inline-flex;
+    flex-direction: row;
+    align-items: flex-end;
+    background-color: #fff;
+    color: black;
+  }
+  #contentContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    bottom: 9vw;
+    height: auto;
+    width: 1100px;
+    top: 90px;
+    margin-top: 100px;
+    margin-bottom: 60px;
+    padding: 40px 60px;
+    background-color: white;
+  }
+  #header{
+    padding-bottom: 20px;
+  }
+  #disclaimer{
+    padding: 20px;
+    border: 3px dashed red;
+    text-align: justify;
+    margin-bottom: 40px;
+  }
+  .grid-container{
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    /* grid-template-rows: repeat(1, auto); */
+    grid-gap: 40px;
+  }
+  .grid-container > div {
+    text-align: center;
+    padding: 10px 10px;
+    font-size: 30px;
+  }
+  .item{
+    display: flex;
+    flex-direction: row;
+  }
+  #text{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border: 3px dashed black;
+    padding: 20px;
+    width: 100%;
+  }
+  #homePage #headingText{
+    text-align:center;
+  }
+  #infoPage #headingText{
+    text-align: left;
+  }
+  #descriptionText{
+    text-align: justify;
+    text-indent: 50px;
+  }
+  #imageA{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    padding: 20px;
+    padding-right: 0;
+  }
+  #imageB{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    padding: 20px;
+    padding-left: 0;
+  }
+  .homeImgA{
+    height: 200px;
+    width: 200px;
+    border-radius: 200px;
+  }
+  .homeImgA:hover{
+    filter: blur(1px);
+    transition: 1s;
+  }
+  .infoImgA{
+    height: 100px;
+    width: 100px;
+    border-radius: 100px;
+  }
+  .infoImgA:hover{
+    filter: blur(1px);
+    transition: 1s;
+  }
+  #ribbon{
+    display: flex;
+    justify-content: flex-start;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+  #surveyIntro{
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 40px;
+  }
+  #surveyQuestions{
+    display: inline-flex;
+    flex-direction: column;
+    align-self: flex-start;
+    font-family: openSans-Light;
+    font-size: 20px;
+  }
+  #submitSurvey{
+    display: inline-flex;
+    flex-direction: column;
+    align-self: flex-end;
+    font-family: openSans-Light;
+    font-size: 20px;
+  }
+
+  .logo{
+    position: relative;
+    width: 75px;
+    height: 77px;
+  }
+  h1{
+    font-family: AmaticSC-Bold;
+    font-size: 70px;
+  }
+  h3{
+    font-family: AmaticSC-Bold;
+    font-size: 30px;
+  }
+  h4{
+    font-family: AmaticSC-Bold;
+    font-size: 50px;
+  }
+  h5{
+    font-family: AmaticSC-Bold;
+    font-size: 40px;
+  }
+  h6{
+    font-family: openSans-Light;
+    font-size: 20px;
+  }
+  #disclaimer h3{
+    text-align: center;
+  }
+  #footer{
+    width: 100%;
+    text-align: center;
+    margin: 20px;
+    margin-top: 40px;
+    border: 3px dashed black;
+  }
+  #homePage #footer{
+    background-color: #B4DDCB;
+  }
+  #surveyPage #footer{
+    background-color: #F3ABCC;
+  }
+  #infoPage #footer{
+   background-color: #96DAF4;
+  }
+  #submitButton{
+    border: 2px dashed black;
+    padding: 5px 5px;
+    font-family: AmaticSC-Bold;
+    font-size: 25px;
+    cursor: pointer;
+  }
+  #planResults{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    margin-left: 80px;
+    margin-right: 80px;
+  }
+  #image{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+  }
+  #issues{
+    display: flex;
+    flex-direction: column;
+  }
+  #issue1, #issue2, #issue3{
+    display: inline-flex;
+    flex-direction: column;
+    text-align: left;
+  }
+  input{
+    width: 30px;
+    height: 20px;
+  }
+  p{
+    font-family: openSans-Light;
+    font-size: 20px;
+  }
+}

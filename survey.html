@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Survey Page</title>
+  </head>
+  <body>
+    <div id="surveyPage">
+      <div id="mainContainer">
+        <div class="nav">
+          <div id="ribbon">
+            <img class='logo' src="MHA_Ribbon.jpg">
+          </div>
+            <ul>
+              <a href="index.html">Home</a>
+              <a class="active" href="survey.html">Personal Plan</a>
+              <a href = "info.html">Information</a>
+            </ul>
+        </div>
+        <div id="contentContainer">
+          <div id="headingText">
+            <h1 id="headText">Survey</h1>
+          </div>
+          <div id="surveyIntro">
+            <p>To create a personal plan for you, we must calculate which issues you align with the most, please answer each questions as truthfully as possible.</p>
+            <p>Using a scale from 1-5, "1" = Disagree, "2" = Somewhat Disagree, "3" = "Neutral", "4" = Somewhat Agree, and "5" = Agree.</p>
+            <p>Try to only use neutral if you are unsure about the statement.</p>
+          </div>
+          <div id="surveyQuestions">
+            <!-- anxiety -->
+            <label>1) I often feel nervous, worried, or on edge:
+              <input type="number" id="aq1" min="1" max="5">
+            </label>
+            <br>
+            <label>2) I often find myself tugging at my hair, picking at my fingers, shaking, or trembling:
+              <input type="number" id="aq2" min="1" max="5">
+            </label>
+            <br>
+            <label>3) There is an event, project, or issue on my mind that is causing me to overthink and I am not able to take my mind off of it or relax:
+              <input type="number" id="aq3" min="1" max="5">
+            </label>
+            <br>
+            <!-- depression -->
+            <label>4) I often feel down, hopeless, or empty:
+              <input type="number" id="dq1" min="1" max="5">
+            </label>
+            <br>
+            <label>5) I find myself having trouble falling asleep, sleeping too much, eating to little, or overeating:
+              <input type="number" id="dq2" min="1" max="5">
+            </label>
+            <br>
+            <label>6) I have lost interest in the things that used to bring me pleasure and I've been having trouble concentrating or performing everyday activities:
+              <input type="number" id="dq3" min="1" max="5">
+            </label>
+            <br>
+            <!-- exhaustion -->
+            <label>7) I often find myself waking up tired, falling asleep during the day, or napping multiple times during the day:
+              <input type="number" id="eq1" min="1" max="5">
+            </label>
+            <br>
+            <label>8) I recently had a heavy workload that caused me to stay up longer than usual, work for more hours, or change a schedule I am used to:
+              <input type="number" id="eq2" min="1" max="5">
+            </label>
+            <br>
+            <label>9) I am finding it difficult to focus on new assignments/tasks or physically get up to do them:
+              <input type="number" id="eq3" min="1" max="5">
+            </label>
+            <br>
+            <!-- isolation -->
+            <label>10) I often feel lonely, claustrophobic, or suffocated:
+              <input type="number" id="iq1" min="1" max="5">
+            </label>
+            <br>
+            <label>11) Even though I talk to people online and use social media, I often feel left out or that I am lacking real connection and conversation:
+              <input type="number" id="iq2" min="1" max="5">
+            </label>
+            <br>
+            <label>12) I am unable to meet with people in-person and I am starting to feel more alone than ever:
+              <input type="number" id="iq3" min="1" max="5">
+            </label>
+            <br>
+            <!-- stress -->
+            <label>13) I often feel extremely emotionally or physically strained or tense:
+              <input type="number" id="sq1" min="1" max="5">
+            </label>
+            <br>
+            <label>14) My workload is becoming unbearable or I am being faced with very demanding circumstances in my life:
+              <input type="number" id="sq2" min="1" max="5">
+            </label>
+            <br>
+            <label>15) I find myself overwhelmed with tasks to the point of not being able to begin or complete any:
+              <input type="number" id="sq3" min="1" max="5">
+            </label>
+            <br>
+            <!-- zoom fatigue -->
+            <label>16) I often find myself drifting off in online meetings or classes, getting headaches, or feeling like my eyes are strained:
+              <input type="number" id="zq1" min="1" max="5">
+            </label>
+            <br>
+            <label>17) Attempting to multitask while in an online meeting causes me physical and mental distress:
+              <input type="number" id="zq2" min="1" max="5">
+            </label>
+            <br>
+            <label>18) I start to feel exhasted when looking at screens more so than I have in the past:
+              <input type="number" id="zq3" min="1" max="5">
+            </label>
+            <br>
+          </div>
+          <div id="submitSurvey">
+            <button type="submit" id="submitButton">Submit</button>
+          </div>
+          <div id="planResults">
+            <div id="resultTitle">
+              <h4 id="resultHeader"></h4>
+            </div>
+            <div id="image"></div>
+            <div id="issues">
+              <h4 id="issue1"></h4>
+              <h6 id="issue2"></h6>
+              <h6 id="issue3"></h6>
+            </div>
+            <br>
+            <br>
+            <div id="results"></div>
+          </div>
+          <div id="footer">
+            <h3>Thank you and take care!</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js" charset="utf-8"></script>
+  </body>
+</html>
